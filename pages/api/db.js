@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { Pool } from 'pg';
 
 const pool = new Pool({

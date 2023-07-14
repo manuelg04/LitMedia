@@ -1,7 +1,9 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useState } from 'react';
 import axios from 'axios';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import { useRouter } from 'next/router';
 
 dayjs.extend(relativeTime);
 
@@ -11,7 +13,10 @@ export default function ForoVideosLectura() {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
 
+  const router = useRouter();
+
   const handleSubmit = async (e) => {
+
     e.preventDefault();
     try {
       const res = await axios.post('/api/youtubeVideo', { youtubeURL });
@@ -47,6 +52,13 @@ export default function ForoVideosLectura() {
 
   return (
     <div className="flex flex-col min-h-screen bg-darkBlue space-y-6 lg:space-y-0 lg:space-x-6">
+       <nav className="bg-darkBlue text-center py-4">
+        <button
+          onClick={() => router.push('/')}
+          className="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-400 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700 transition duration-150 ease-in-out">
+            Ir al inicio
+        </button>
+      </nav>
       <div className="flex-1 flex flex-col lg:flex-row w-full p-6 text-lightBeige">
         <div className="bg-lightBlue lg:w-1/3 p-6 rounded-xl shadow-lg space-y-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Notas Literarias</h2>
@@ -122,6 +134,7 @@ export default function ForoVideosLectura() {
         </div>
       </div>
       <footer className="bg-darkBlue text-center text-lightBeige py-6">
+        
         <p>© 2023 LITMEDIA. Todos los derechos reservados.</p>
       </footer>
     </div>

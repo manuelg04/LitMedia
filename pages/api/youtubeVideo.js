@@ -1,4 +1,4 @@
-import db from '../.././pages/db';
+import db from '../.././pages/api/db';
 
 const YoutubeVideoHandler = async (req, res) => {
   const { youtubeURL } = req.body;

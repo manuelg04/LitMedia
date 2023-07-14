@@ -1,4 +1,4 @@
-import db from '../..//pages/db';
+import db from '../.././pages/api/db';
 import bcrypt from 'bcrypt';
 
 const registerUser = async (req, res) => {

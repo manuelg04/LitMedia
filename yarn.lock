@@ -2031,7 +2031,7 @@ find-up@^5.0.0:
 
 firebase@^10.0.0:
   version "10.0.0"
-  resolved "https://registry.npmjs.org/firebase/-/firebase-10.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/firebase/-/firebase-10.0.0.tgz#973b40a167b14ffec23bf1da081682e1cbc9effa"
   integrity sha512-5falS6Qv0WRlB7Uool2s9sHH7e3oMCkJNAWpgTRFLnPUjsFmHAF9rP3pZH0d9NuyjdcQnzglCVT1MwNiHatIsw==
   dependencies:
     "@firebase/analytics" "0.10.0"

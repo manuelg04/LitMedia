@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import Head from "next/head";
-import PlatformPart from "./components/Platform";
+import Historietas from "./components/dashelper";
 import Link from "next/link";
 
 export default function Dashboard() {
@@ -33,7 +33,7 @@ export default function Dashboard() {
             </Link>
         </div>
         <h2 className="text-2xl mb-4">Objetivos específicos del proyecto:</h2>
-        <PlatformPart />
+        <Historietas />
       </main>
 
       <footer className="bg-blue-400 text-white p-6 text-center">

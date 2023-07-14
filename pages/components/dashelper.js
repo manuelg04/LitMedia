@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { SmileOutlined, HeartOutlined, BookOutlined } from '@ant-design/icons';
 
-export default function PlatformPart() {
+export default function Historietas() {
   return (
     <div>
       <h3>Diseñar y desarrollar una plataforma multimedia para la gestión del club de lectura:</h3>

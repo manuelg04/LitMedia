@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 import React, { useState } from 'react';
 import { uploadPDFFile } from './../api/firebase';  // Asegúrate de que esta ruta esté correcta
 import { Button, Upload, message, Spin } from 'antd';
@@ -13,7 +14,6 @@ const draggerProps = {
   onChange(info) {
     const { status } = info.file;
     if (status !== 'uploading') {
-      console.log(info.file, info.fileList);
     }
     if (status === 'done') {
       message.success(`${info.file.name} file uploaded successfully.`);

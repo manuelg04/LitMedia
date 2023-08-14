@@ -25,7 +25,7 @@ const registerUser = async (req, res) => {
       // Retorna una respuesta exitosa
       res.status(201).json({ message: 'Usuario creado exitosamente' });
     } catch (error) {
-      console.log(error);
+      
       res.status(500).json({ message: 'Hubo un error al crear el usuario' });
     }
   } else {

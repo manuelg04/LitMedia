@@ -37,7 +37,7 @@ export default function Registrarse() {
       // Mostrar mensaje de éxito
       message.success(res.data.message);
       // Redirigir al dashboard
-      router.push('/dashboard');
+      router.push('/iniciar-sesion');
     } catch (error) {
       console.error('Error al registrar el usuario', error);
       if (error.response) {
@@ -51,22 +51,22 @@ export default function Registrarse() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center">
+    <div className="flex flex-col min-h-screen items-center justify-center bg-gradient-to-br from-pink-300 via-purple-300 to-blue-400">
       <Head>
         <title>Registrarse - LITMEDIA</title>
         <meta name="description" content="Registro en el Club de Lectura LITMEDIA" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <h1 className="text-4xl font-bold mb-4">Registrarse</h1>
-
-      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+  
+      <h1 className="text-5xl font-bold text-white mb-8">Registrarse</h1>
+  
+      <form className="w-full max-w-sm bg-gray-900 bg-opacity-60 shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="documento">
+          <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="documento">
             Documento
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="documento"
             type="text"
             placeholder="Ingrese su documento"
@@ -75,11 +75,11 @@ export default function Registrarse() {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">
+          <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="nombre">
             Nombre
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="nombre"
             type="text"
             placeholder="Ingrese su nombre"
@@ -88,11 +88,11 @@ export default function Registrarse() {
           />
         </div>
         <div className="mb-6">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contrasena">
+          <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="contrasena">
             Contraseña
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="contrasena"
             type="password"
             placeholder="Ingrese su contraseña"
@@ -102,7 +102,7 @@ export default function Registrarse() {
         </div>
         <div className="flex items-center justify-center">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform transition hover:scale-105"
             type="submit"
           >
             Registrarse
@@ -111,4 +111,5 @@ export default function Registrarse() {
       </form>
     </div>
   );
+  
 }

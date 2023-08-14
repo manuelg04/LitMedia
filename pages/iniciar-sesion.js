@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { useDispatch , useSelector } from 'react-redux'; // Importa el useDispatch
+import { setUser } from '../redux/userSlice'; // Importa la acción setUser del slice
+import Swal from "sweetalert2";
+
 
 function Login() {
   const [document, setDocument] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const dispatch = useDispatch()
+  const userName = useSelector((state) => state.user.usuario);
+  console.log("🚀 ~ userName:", userName)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,14 +21,31 @@ function Login() {
       const response = await axios.post('/api/loginuser', { documento: document, contrasena: password });
 
       if (response.status === 200) {
+        // Obtiene el nombre de usuario desde la respuesta
+        dispatch(setUser({ nombre: response.data.nombre, id: response.data.id }));
+
+
+        Swal.fire({
+          icon: 'success',
+          title: '¡Buen trabajo!',
+          text: 'Credenciales correctas, estamos iniciando sesión'
+        });
+
         // Redirige al usuario al dashboard si el inicio de sesión fue exitoso
         router.push('/dashboard');
       } else {
-        // Manejar otros códigos de estado HTTP
-        console.error('Ocurrió un error al iniciar sesión');
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Documento o contraseña incorrecta, por favor verifica tus credenciales'
+        });
       }
     } catch (error) {
-      console.error(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Documento o contraseña incorrecta, por favor verifica tus credenciales'
+      });
     }
   };
 
@@ -98,6 +122,9 @@ function Login() {
             </button>
           </div>
         </form>
+        <div className="mt-4 text-center">
+        <p>No estás registrado? <a href="/registrarse" className="text-indigo-600 hover:text-indigo-700 cursor-pointer">¡Hazlo ahora!</a></p>
+      </div>
       </div>
     </div>
   );

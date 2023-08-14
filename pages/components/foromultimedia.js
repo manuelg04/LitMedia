@@ -19,14 +19,13 @@ export default function ForoVideosLectura() {
 
     e.preventDefault();
     try {
-      const res = await axios.post('/api/youtubeVideo', { youtubeURL });
+      await axios.post('/api/youtubeVideo', { youtubeURL });
       setYoutubeURL('');
 
       const urlParams = new URLSearchParams(new URL(youtubeURL).search);
       setVideoId(urlParams.get('v'));
       setYoutubeURL('');
 
-      console.log(res.data.message);
     } catch (error) {
       console.error('Error al subir el vídeo', error);
       if (error.response) {
@@ -64,7 +63,7 @@ export default function ForoVideosLectura() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Notas Literarias</h2>
           <div className="bg-white p-4 rounded-lg shadow">
             {/* Here you can insert the literary notes content */}
-            <p className="text-gray-700">Aquí van las notas literarias...</p>
+            <p className="text-gray-700">The quote comes from the authors latest book. La cita proviene del libro más reciente del autor.</p>
           </div>
         </div>
 

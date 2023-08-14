@@ -10,7 +10,7 @@ const getComments = async (req, res) => {
       res.status(200).json(result.rows);
     } catch (error) {
       
-      res.status(500).json({ message: 'Hubo un error al obtener los comentarios' });
+      res.status(500).json({ message: 'Hubo un error al obtener los comentarios', error: error.message });
     }
   } else {
     res.setHeader('Allow', ['GET']);

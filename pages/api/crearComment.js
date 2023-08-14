@@ -13,7 +13,7 @@ const createComment = async (req, res) => {
       res.status(201).json({ message: 'Comentario creado exitosamente' });
     } catch (error) {
       console.error("Error al crear comentario:", error.message);
-      res.status(500).json({ message: 'Hubo un error al crear el comentario' });
+      res.status(500).json({ message: 'Hubo un error al crear el comentario', error: error.message });
     }
   } else {
     res.setHeader('Allow', ['POST']);

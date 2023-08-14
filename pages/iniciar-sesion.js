@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import { useDispatch , useSelector } from 'react-redux'; // Importa el useDispatch
+import { useDispatch } from 'react-redux'; // Importa el useDispatch
 import { setUser } from '../redux/userSlice'; // Importa la acción setUser del slice
 import Swal from "sweetalert2";
 
@@ -11,8 +11,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const router = useRouter();
   const dispatch = useDispatch()
-  const userName = useSelector((state) => state.user.usuario);
-  console.log("🚀 ~ userName:", userName)
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -27,7 +27,7 @@ export default function Dashboard() {
   };
 
   const handleSubmit = async (values) => {
-   console.log("🚀 ~ values:", values)
+   
    
   dispatch(setBook({ 
     libroAsociado: values.libroAsociado, 
@@ -54,7 +54,7 @@ export default function Dashboard() {
       throw new Error('No se pudo obtener el ID del club');
     }
   } catch (error) {
-    console.log("🚀 ~ error:", error)
+    
     message.error('Hubo un error al crear el club');
   }
 

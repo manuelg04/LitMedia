@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 
 
-import { Card, Rate } from 'antd';
+import { Avatar, Card, Col, Rate, Row } from 'antd';
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
@@ -18,7 +18,7 @@ export default function Home() {
   ];
   
   return (
-    <div className={styles.body}>
+    <div className={`${styles.body} ${styles.containerStyle}`}>
       <Head>
         <title>LITMEDIA - Club de Lectura</title>
         <meta name="description" content="Espacio literario multimedia para la comunidad universitaria: Club de Lectura LITMEDIA en la Universidad San Buenaventura de Cali" />
@@ -33,25 +33,28 @@ export default function Home() {
 
       <main className="flex-grow p-6">
       <h2 className="text-2xl mb-4">¡Bienvenidos al Club de Lectura LITMEDIA!</h2>
-      <Card
-        style={{ width: 300, marginTop: 16 }}
-        title="Somos más de 1k usuarios"
-      >
-        <div className={styles["profile-pictures"]}>
-          {/* Recuerda reemplazar las rutas de las imágenes con las rutas correctas de las imágenes de los perfiles de los usuarios */}
-          <img className={styles["profile-picture"]} src="/user-1.jpg" alt="User" />
-          <img className={styles["profile-picture"]} src="/user-2.jpg" alt="User" />
-          <img className={styles["profile-picture"]} src="/user-3.jpg" alt="User" />
-          <img className={styles["profile-picture"]} src="/user-1.jpg" alt="User" />
-          {/* ... */}
-        </div>
-        <Rate disabled defaultValue={4.8} />
-      </Card>
+      <Row gutter={[16, 16]}>
+    <Col span={24}>
+    <Card title="Somos más de 1k usuarios" style={{ backgroundColor: '#C6F6D5' }} >
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+        <Avatar src="/user-1.jpg" style={{ margin: '0 100px' }} />
+        <Avatar src="/user-2.jpg" style={{ margin: '0 100px' }} />
+        <Avatar src="/user-3.jpg" style={{ margin: '0 100px' }}/>
+        <Avatar src="/user-1.jpg" style={{ margin: '0 100px' }} />
+    </div>
+    <Rate disabled defaultValue={4.8} style={{ display: 'block', margin: '10px auto' }} />
+    </div>
+</Card>
+
+    </Col>
+    </Row>
       <p>En LITMEDIA, nos apasiona la literatura y queremos compartir esa pasión con la comunidad universitaria de la Universidad San Buenaventura de Cali.</p>
       <p>Explora nuestra plataforma multimedia, accede a diversos materiales de lectura, participa en actividades literarias interactivas y expande tu mundo a través de la lectura.</p>
       {/* ... */}
 
-      <section id="libros" className="mt-10 bg-purple-200 p-6 rounded-lg font-bold">
+      <section id="libros" className="mt-10 bg-green-200 p-6 rounded-lg font-bold">
+
   <h3 className="text-xl mb-4">Nuestros libros más populares</h3>
   <div className="grid grid-cols-6 gap-2">
     {books.map((book, index) => (

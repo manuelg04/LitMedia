@@ -3,10 +3,7 @@ import db from '../.././pages/api/db';
 const getComments = async (req, res) => {
   if (req.method === 'GET') {
     const { club_id } = req.query;
-    console.log("🚀 ~ req.query:", req.query)
- 
-    
-
+  
     try {
       const result = await db.query('SELECT * FROM comments WHERE club_id = $1 ORDER BY date DESC', [club_id]); // cambiado de book_id a club_id
 

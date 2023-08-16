@@ -7,7 +7,7 @@ import axios from 'axios';
 import { List, Typography } from 'antd';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
-import { setCurrentClub } from '../../redux/clubSlice';
+import { setCurrentClubId } from '../../redux/clubSlice';
 import { useRouter } from 'next/router';
 
 
@@ -17,7 +17,7 @@ const ListadodeClubs = () => {
   const router = useRouter();
 
   const handleClubClick = (club) => {
-    dispatch(setCurrentClub(club));
+    dispatch(setCurrentClubId(club));
     router.push(`/club/${club.idclub}`);
   };
 

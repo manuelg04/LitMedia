@@ -3,16 +3,15 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import CreateClubLectura from '..//components/clubLectura';
-import { selectCurrentClub } from '../../redux/selectorClub';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCurrentClub } from '../../redux/clubSlice';
+import { setCurrentClubId } from '../../redux/clubSlice';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { setBook } from '../../redux/bookSlice';
 
 const ClubPage = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const club = useSelector(selectCurrentClub);
+  const clubId = useSelector((state) => state.club.idclub);
   const dispatch = useDispatch();
   const router = useRouter();
   const { id } = router.query;
@@ -20,13 +19,13 @@ const ClubPage = () => {
   
 
   useEffect(() => {
-    if (!club && id) {
+    if (!clubId && id) {
       // Si no hay club en la tienda Redux y tenemos el ID del club, hacemos una llamada API.
       const fetchClub = async () => {
         try {
           const response = await axios.get(`/api/obtenerClub/${id}`);
           if (response.data) {
-            dispatch(setCurrentClub(response.data));
+            dispatch(setCurrentClubId(response.data));
             if (response.data.libro) {  // Si la respuesta contiene la información del libro
                 dispatch(setBook(response.data.libro));
             }
@@ -42,7 +41,7 @@ const ClubPage = () => {
     } else {
       setIsLoading(false);
     }
-  }, [id, club, dispatch]);
+  }, [id, clubId, dispatch]);
 
   if (isLoading) {
     return(

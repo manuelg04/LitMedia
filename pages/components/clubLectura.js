@@ -5,7 +5,6 @@ import Head from "next/head";
 import { Rate } from "antd";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { selectCurrentClub } from "../../redux/selectorClub";
 import { selectUserId, selectUserName } from "../../redux/selector";
 import Swal from 'sweetalert2';
 import axios from "axios";
@@ -30,8 +29,7 @@ dayjs.extend(localizedFormat);
   
   const [rating, setRating] = useState(0);
 
-  const clubId = useSelector(selectCurrentClub);
-  
+  const clubId = useSelector((state) => state.club.idclub);
   const nombreUsuario = useSelector(selectUserName);
   const userId = useSelector(selectUserId);
  const router = useRouter();
@@ -60,7 +58,7 @@ dayjs.extend(localizedFormat);
   const fetchComments = async () => {
     try {
       
-      const response = await axios.get('/api/getComentarios?club_id=' + clubId.idclub);
+      const response = await axios.get('/api/getComentarios?club_id=' + clubId);
      
       setComments(response.data);
     } catch (error) {

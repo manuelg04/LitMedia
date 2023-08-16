@@ -8,14 +8,15 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setBook } from "../redux/bookSlice";
-import { setCurrentClub } from "../redux/clubSlice";
 import Swal from 'sweetalert2';
+import { setCurrentClubId } from "../redux/clubSlice";
 
 
 export default function Dashboard() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const router = useRouter();
   const dispatch = useDispatch();
+  
 
   const [form] = Form.useForm();
 
@@ -42,8 +43,8 @@ export default function Dashboard() {
 
   try {
     const response = await axios.post('/api/createClub', values);
-    if(response.data && response.data.id) {
-      dispatch(setCurrentClub({ id: response.data.id }));
+    if(response.data && response.data.idclub) {
+      dispatch(setCurrentClubId({ idclub: response.data.idclub }));
       Swal.fire({
         icon: 'success',
         title: '¡Buen trabajo!',

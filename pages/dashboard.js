@@ -11,6 +11,7 @@ import { setBook } from "../redux/bookSlice";
 import { setCurrentClub } from "../redux/clubSlice";
 import Swal from 'sweetalert2';
 
+
 export default function Dashboard() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const router = useRouter();
@@ -50,15 +51,11 @@ export default function Dashboard() {
       });
       
       router.push("/components/clubLectura");
-    } else {
-      throw new Error('No se pudo obtener el ID del club');
     }
   } catch (error) {
-    
     message.error('Hubo un error al crear el club');
   }
 
-  router.push("/components/clubLectura");
   };
 
   const handleLogout = async () => {

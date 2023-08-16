@@ -7,8 +7,13 @@ export const clubSlice = createSlice({
   },
   reducers: {
     setCurrentClub: (state, action) => {
-      state.currentClub = action.payload;
+      if (typeof action.payload === 'string') {
+        state.currentClub = JSON.parse(action.payload);
+      } else {
+        state.currentClub = action.payload;
+      }
     },
+    
   },
 });
 

@@ -1,5 +1,6 @@
+export const selectCurrentClub = (state) => state.club.currentClub;
 
-// Selector para obtener el ID del club actualmente selecciono
-export const selectCurrentClub = (state) => state.club.currentClub || state.club.currentClub.idclub ||null;
-
-
+export const selectCurrentClubId = (state) => {
+  const club = selectCurrentClub(state);
+  return club ? club.id : null; // Usamos 'id' aquí porque tu estructura tiene 'id' y no 'Idclub'.
+};

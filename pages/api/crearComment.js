@@ -3,7 +3,8 @@ import db from '../.././pages/api/db';
 const createComment = async (req, res) => {
   if (req.method === 'POST') {
     const { user_id, club_id, comments } = req.body;
-  
+    
+
     try {
       await db.query(
         'INSERT INTO comments (user_id, club_id, comment, date) VALUES ($1, $2, $3, NOW())',

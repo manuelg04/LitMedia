@@ -14,6 +14,7 @@ import utc from 'dayjs/plugin/utc'; // UTC plugin
 import timezone from 'dayjs/plugin/timezone'; // timezone plugin
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import { useRouter } from "next/router";
+import { selectAutor, selectDescripcion, selectNombre } from "../../redux/selectorBook";
 
 
 const CreateClubLectura = () => {
@@ -29,16 +30,22 @@ dayjs.extend(localizedFormat);
   
   const [rating, setRating] = useState(0);
 
-  const currentClub = useSelector(selectCurrentClub);
-  const clubId = currentClub ? currentClub.idclub : null;
+  const clubId = useSelector(selectCurrentClub);
+  
   const nombreUsuario = useSelector(selectUserName);
   const userId = useSelector(selectUserId);
  const router = useRouter();
 
 
-  const nombreDelLibroAsociado = currentClub ? currentClub.libroasociado : '';
-  const autorDelLibroAsociado = currentClub ? currentClub.autor : '';
-  const descripcionDelLibroAsociado = currentClub ? currentClub.descripcion : '';
+ const nombreDelLibroAsociado = useSelector(selectNombre);
+ 
+ 
+ const autorDelLibroAsociado = useSelector(selectAutor);
+
+ 
+ const descripcionDelLibroAsociado = useSelector(selectDescripcion);
+ 
+ 
 
   const handleRateChange = (value) => {
     setRating(value);
@@ -52,7 +59,9 @@ dayjs.extend(localizedFormat);
 
   const fetchComments = async () => {
     try {
-      const response = await axios.get('/api/getComentarios?club_id=' + clubId);
+      
+      const response = await axios.get('/api/getComentarios?club_id=' + clubId.idclub);
+     
       setComments(response.data);
     } catch (error) {
       console.error(error);
@@ -66,7 +75,7 @@ dayjs.extend(localizedFormat);
 
 
   const handleCommentSubmit = async () => {
-
+    
     const commentData = { user_id: userId, club_id: clubId, comments: comentario} // Aquí agregas el timestamp local} // Aquí agregas el timestamp };
   
     if (!clubId) { // si clubActualId es null o undefined
@@ -77,6 +86,8 @@ dayjs.extend(localizedFormat);
 
     try {
       await axios.post('/api/crearComment', commentData);
+    
+    
       fetchComments();
       // Si todo va bien, limpia el campo del comentario
       setComentario("");
@@ -89,6 +100,7 @@ dayjs.extend(localizedFormat);
     try {
       const response = await axios.post('/api/logout');
       if (response.status === 200) {
+       
         // Redirigir al usuario a la página de inicio o donde desees
         router.push('/');
       }
@@ -136,7 +148,7 @@ dayjs.extend(localizedFormat);
               comments.map((comment, index) => (
                 comment.comment !== "" && (
                   <div key={index} className="mb-4">
-                    <h5 className="font-semibold">{nombreUsuario} {comment.user_id}</h5>
+                    <h5 className="font-semibold">{nombreUsuario}</h5>
                     {/* Aquí se muestra el timestamp del comentario. Asumiendo que "comment.createdAt" contiene la fecha de creación del comentario */}
                     <p className="text-sm text-gray-500">
                     {comment.date && dayjs.utc(comment.date).tz("America/Bogota").format('LLL')}

@@ -22,10 +22,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
 
-export async function uploadPDFFile(file) {
-  const storageRef = ref(storage, uuidv4());
+export async function uploadFile(file, type = 'image') {
+  let folder = type === 'image' ? 'images' : 'pdfs';
+  const storageRef = ref(storage, `${folder}/${uuidv4()}`);
   await uploadBytes(storageRef, file);
   const url = await getDownloadURL(storageRef);
   return url;
 }
+
 

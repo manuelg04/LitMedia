@@ -5,7 +5,7 @@ import Head from "next/head";
 import { Rate } from "antd";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { selectUserId, selectUserName } from "../../redux/selector";
+import { selectUserId } from "../../redux/selector";
 import Swal from 'sweetalert2';
 import axios from "axios";
 import dayjs from 'dayjs';
@@ -30,7 +30,7 @@ dayjs.extend(localizedFormat);
   const [rating, setRating] = useState(0);
 
   const clubId = useSelector((state) => state.club.idclub);
-  const nombreUsuario = useSelector(selectUserName);
+ 
   const userId = useSelector(selectUserId);
  const router = useRouter();
 
@@ -42,17 +42,25 @@ dayjs.extend(localizedFormat);
 
  
  const descripcionDelLibroAsociado = useSelector(selectDescripcion);
+
+ const fotoLibroUrl = useSelector((state) => state.book.fotoLibroUrl);
  
  
 
-  const handleRateChange = (value) => {
-    setRating(value);
-    Swal.fire({ // Usar SweetAlert para mostrar un mensaje
+ const handleRateChange = async (value) => {
+  setRating(value);
+  try {
+    await axios.post('/api/calificarClub', { club_id: clubId, rating: value });
+    Swal.fire({
       icon: 'success',
       title: '¡Gracias por calificar mi club de lectura!',
       text: 'Tu opinion es muy importante para mi.'
     });
-  };
+  } catch (error) {
+    console.error("Error calificando el club:", error);
+  }
+};
+
 
 
   const fetchComments = async () => {
@@ -131,6 +139,7 @@ dayjs.extend(localizedFormat);
             <p className="mb-4">
               Este libro fue escrito por {autorDelLibroAsociado}. Descripción: {descripcionDelLibroAsociado}
             </p>
+            <img src={fotoLibroUrl} alt={`Imagen de ${nombreDelLibroAsociado}`} className="mt-4 mb-4 rounded" />
             <div className="mt-2">
               <Rate onChange={handleRateChange} value={rating} />
               <p className="mt-2 font-semibold">Tu calificación: {rating}</p>
@@ -146,7 +155,7 @@ dayjs.extend(localizedFormat);
               comments.map((comment, index) => (
                 comment.comment !== "" && (
                   <div key={index} className="mb-4">
-                    <h5 className="font-semibold">{nombreUsuario}</h5>
+                    <h5 className="font-semibold">{comment.user_name}</h5>
                     {/* Aquí se muestra el timestamp del comentario. Asumiendo que "comment.createdAt" contiene la fecha de creación del comentario */}
                     <p className="text-sm text-gray-500">
                     {comment.date && dayjs.utc(comment.date).tz("America/Bogota").format('LLL')}

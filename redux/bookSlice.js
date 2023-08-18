@@ -8,6 +8,7 @@ export const bookSlice = createSlice({
       autor: '',
       generoLiterario: '',
       descripcion: '',
+      fotoLibroUrl: ''
     
   },
   reducers: {
@@ -18,6 +19,7 @@ export const bookSlice = createSlice({
       state.autor = action.payload.autor;
       state.generoLiterario = action.payload.generoLiterario;
       state.descripcion = action.payload.descripcion; 
+      state.fotoLibroUrl = action.payload.fotoLibroUrl  
     },
   },
 });

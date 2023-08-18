@@ -1,15 +1,21 @@
-import db from '../.././pages/api/db';
+import db from '../.././pages/api/db'; 
 
 const getComments = async (req, res) => {
   if (req.method === 'GET') {
     const { club_id } = req.query;
-  
+
     try {
-      const result = await db.query('SELECT * FROM comments WHERE club_id = $1 ORDER BY date DESC', [club_id]); // cambiado de book_id a club_id
+      const result = await db.query(
+        `SELECT c.id, c.user_id, u.nombre as user_name, c.comment, c.date
+         FROM comments c
+         JOIN reader_club_users u ON c.user_id = u.Id
+         WHERE c.club_id = $1`,
+        [club_id]
+      );
 
       res.status(200).json(result.rows);
     } catch (error) {
-      
+      console.error("Error al obtener comentarios:", error.message);
       res.status(500).json({ message: 'Hubo un error al obtener los comentarios', error: error.message });
     }
   } else {

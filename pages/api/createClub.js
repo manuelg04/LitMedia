@@ -2,14 +2,14 @@ import db from '../.././pages/api/db'; // Asegúrate de reemplazar esta ruta con
 
 const createClubLectura = async (req, res) => {
   if (req.method === 'POST') {
-    const { nombre, libroasociado, autor, generoliterario, descripcion } = req.body;
+    const { nombre, libroasociado, autor, generoliterario, descripcion, fotoLibroUrl } = req.body;
   
 
     try {
       // Inserta la nueva fila en la base de datos y devuelve el ID del club recién creado
       const result = await db.query(
-        'INSERT INTO list_clubs_created (nombre, libroasociado, autor, generoliterario, descripcion) VALUES ($1, $2, $3, $4, $5) RETURNING idclub',
-        [nombre, libroasociado, autor, generoliterario, descripcion]
+        'INSERT INTO list_clubs_created (nombre, libroasociado, autor, generoliterario, descripcion, fotoLibroUrl) VALUES ($1, $2, $3, $4, $5, $6) RETURNING idclub',
+        [nombre, libroasociado, autor, generoliterario, descripcion, fotoLibroUrl]
       );
 
       // Retorna una respuesta exitosa con el ID del club

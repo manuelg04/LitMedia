@@ -15,9 +15,6 @@ import { setBook } from "../redux/bookSlice";
 import { EyeIcon, PieChartIcon, PlusCircleIcon } from "lucide-react";
 import SimpleBarChart from "./components/chart";
 
-
-
-
 export default function Dashboard() {
 
 
@@ -130,7 +127,7 @@ export default function Dashboard() {
       <div className="flex justify-between gap-4 mb-8 w-full max-w-6xl">
 
 {/* Card para "¿Qué deseas hacer hoy?" y los botones */}
-<div className="bg-white p-6 rounded shadow-lg">
+<div className="bg-white p-1 mt-9 rounded shadow-lg">
   <h2 className="text-2xl mb-4 text-center">¿Qué deseas hacer hoy?</h2>
 
   <div className="flex flex-col space-y-4 items-center">
@@ -163,7 +160,7 @@ export default function Dashboard() {
 </div>
 
 {/* Card de calificación */}
-<div className="bg-white p-6 rounded shadow-lg flex-1 flex flex-col items-center">
+<div className="bg-white p-6 rounded shadow-lg flex-1 flex flex-col items-center mt-9 ">
       <h2 className="text-xl mb-2 text-justify">🌟 LITMEDIA es reconocido ampliamente como el mejor club de lectura en la región del Valle del Cauca, específicamente en Cali, Colombia. Nuestro compromiso con la promoción de la literatura, la creación de espacios para el debate y el fomento del amor por la lectura nos ha posicionado en el corazón de nuestra comunidad. Agradecemos profundamente a cada miembro por ser parte de esta maravillosa experiencia y contribuir a nuestra misión. ¡Gracias por pertenecer a LITMEDIA y hacerlo posible!</h2>
       <p className="mb-2">Gracias por pertenecer a LITMEDIA</p>
       <span className="text-4xl">😃</span> {/* Emoji de felicidad */}

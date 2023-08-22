@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { setCurrentClubId } from "../../redux/clubSlice";
 import { useRouter } from "next/router";
+import { setBook } from "../../redux/bookSlice";
 
 const ListadodeClubs = () => {
   const [clubs, setClubs] = useState([]);
@@ -17,6 +18,16 @@ const ListadodeClubs = () => {
 
   const handleClubClick = (club) => {
     dispatch(setCurrentClubId(club));
+
+      // Actualizar los detalles del libro en el estado global
+      dispatch(setBook({
+        nombre: club.nombre,
+        libroAsociado: club.libroasociado,
+        autor: club.autor, // Asegúrate de que el objeto club tiene esta propiedad
+        generoLiterario: club.generoLiterario, // Lo mismo aquí
+        descripcion: club.descripcion,
+        fotoLibroUrl: club.fotolibrourl,
+    }));
     router.push(`/club/${club.idclub}`);
   };
 
@@ -42,24 +53,27 @@ const ListadodeClubs = () => {
           className="text-center"
           renderItem={(club) => (
             <List.Item
-              className="text-center flex justify-center items-center"
-              onClick={() => handleClubClick(club)}
-            >
-              <Link
-                href={`/club/${club.idclub}`}
-                className="w-full text-center"
-              >
-                <Typography.Text mark>[{club.idclub}]</Typography.Text>
-                {club.nombre} - {club.libroasociado}
-                <br />
-                <Rate value={club.avg_rating} disabled />
-                <br />
+  className="flex flex-col items-center text-center my-4"
+  onClick={() => handleClubClick(club)}
+>
+  <Link href={`/club/${club.idclub}`}>
+    <img src={club.fotolibrourl} alt={`Imagen de ${club.libroasociado}`} className="w-32 h-32 mb-4 object-cover rounded" />
+    <Typography.Text mark>[{club.idclub}]</Typography.Text>
+    <br />
+    <strong>{club.libroasociado}</strong>
+    <br />
+    {club.nombre}
+    <br />
+    {club.autor} {/* Asegúrate de que 'club' tenga esta propiedad 'autor' */}
+    <br />
+    <Rate value={club.avg_rating} disabled />
+    <br />
+    <Typography.Text type="secondary">
+      {club.descripcion}
+    </Typography.Text>
+  </Link>
+</List.Item>
 
-                <Typography.Text type="secondary">
-                  {club.descripcion}
-                </Typography.Text>
-              </Link>
-            </List.Item>
           )}
         />
       </div>

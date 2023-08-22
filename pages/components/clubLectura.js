@@ -13,7 +13,7 @@ import utc from 'dayjs/plugin/utc'; // UTC plugin
 import timezone from 'dayjs/plugin/timezone'; // timezone plugin
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import { useRouter } from "next/router";
-import { selectAutor, selectDescripcion, selectNombre } from "../../redux/selectorBook";
+import { selectAutor, selectDescripcion, selectFotoLibroUrl, selectNombre } from "../../redux/selectorBook";
 
 
 const CreateClubLectura = () => {
@@ -43,9 +43,9 @@ dayjs.extend(localizedFormat);
  
  const descripcionDelLibroAsociado = useSelector(selectDescripcion);
 
- const fotoLibroUrl = useSelector((state) => state.book.fotoLibroUrl);
- 
- 
+ const fotoLibroUrl = useSelector(selectFotoLibroUrl);
+
+
 
  const handleRateChange = async (value) => {
   setRating(value);
@@ -139,7 +139,9 @@ dayjs.extend(localizedFormat);
             <p className="mb-4">
               Este libro fue escrito por {autorDelLibroAsociado}. Descripción: {descripcionDelLibroAsociado}
             </p>
-            <img src={fotoLibroUrl} alt={`Imagen de ${nombreDelLibroAsociado}`} className="mt-4 mb-4 rounded" />
+            <img src={fotoLibroUrl} alt="Imagen del libro" className="w-32 h-32 mb-4 object-cover rounded" />
+
+
             <div className="mt-2">
               <Rate onChange={handleRateChange} value={rating} />
               <p className="mt-2 font-semibold">Tu calificación: {rating}</p>

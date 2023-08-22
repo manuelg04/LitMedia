@@ -14,6 +14,7 @@ import { uploadFile } from "./api/firebase";
 import { setBook } from "../redux/bookSlice";
 import { EyeIcon, PieChartIcon, PlusCircleIcon } from "lucide-react";
 import SimpleBarChart from "./components/chart";
+import styles from "../styles/button.module.css";
 
 export default function Dashboard() {
 
@@ -123,18 +124,19 @@ export default function Dashboard() {
 
       </header>
 
-      <main className="flex-grow p-6 flex flex-col justify-center items-center h-screen">
+      <main className="flex-grow p-6 flex flex-col justify-center items-center">
+
       <div className="flex justify-between gap-4 mb-8 w-full max-w-6xl">
 
 {/* Card para "¿Qué deseas hacer hoy?" y los botones */}
-<div className="bg-white p-1 mt-9 rounded shadow-lg">
-  <h2 className="text-2xl mb-4 text-center">¿Qué deseas hacer hoy?</h2>
+<div className={styles["card-container"]}>
+  <h2 className="text-2xl mb-4 text-center sm:text-xl">¿Qué deseas hacer hoy?</h2>
 
-  <div className="flex flex-col space-y-4 items-center">
+  <div className={styles["card-actions"]}>
     {/* Primer botón con ícono de ejemplo */}
     <Link href="/components/foromultimedia">
-      <button className="flex justify-center items-center w-64 text-lg bg-gradient-to-r from-purple-600 to-purple-900 hover:from-purple-500 hover:to-purple-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        <PlusCircleIcon className="h-6 w-6 mr-2"/> Crear Espacio de Lectura Multimedia
+      <button className="flex justify-center items-center w-full sm:w-64 text-lg bg-gradient-to-r from-purple-600 to-purple-900 hover:from-purple-500 hover:to-purple-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline sm:w-full">
+        <PlusCircleIcon className="h-6 w-6 mr-2 sm:h-5 sm:w-5 sm:mr-1"/> Crear Espacio de Lectura Multimedia
       </button>
     </Link>
 
@@ -160,8 +162,8 @@ export default function Dashboard() {
 </div>
 
 {/* Card de calificación */}
-<div className="bg-white p-6 rounded shadow-lg flex-1 flex flex-col items-center mt-9 ">
-      <h2 className="text-xl mb-2 text-justify">🌟 LITMEDIA es reconocido ampliamente como el mejor club de lectura en la región del Valle del Cauca, específicamente en Cali, Colombia. Nuestro compromiso con la promoción de la literatura, la creación de espacios para el debate y el fomento del amor por la lectura nos ha posicionado en el corazón de nuestra comunidad. Agradecemos profundamente a cada miembro por ser parte de esta maravillosa experiencia y contribuir a nuestra misión. ¡Gracias por pertenecer a LITMEDIA y hacerlo posible!</h2>
+<div className={`${styles["card-container"]} ${styles["card-rating"]}`}>
+      <h2 className="text-xl mb-2 text-justify sm:text-lg sm:px-2">🌟 LITMEDIA es reconocido ampliamente como el mejor club de lectura en la región del Valle del Cauca, específicamente en Cali, Colombia. Nuestro compromiso con la promoción de la literatura, la creación de espacios para el debate y el fomento del amor por la lectura nos ha posicionado en el corazón de nuestra comunidad. Agradecemos profundamente a cada miembro por ser parte de esta maravillosa experiencia y contribuir a nuestra misión. ¡Gracias por pertenecer a LITMEDIA y hacerlo posible!</h2>
       <p className="mb-2">Gracias por pertenecer a LITMEDIA</p>
       <span className="text-4xl">😃</span> {/* Emoji de felicidad */}
       <div className="mt-2 flex items-center">

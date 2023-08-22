@@ -1,0 +1,46 @@
+.card-container {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  margin: 40px auto; /* Aumentar el margen superior e inferior */
+  max-width: 1000px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-actions, .card-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 350px; /* Limita el ancho de los botones */
+}
+
+.card-rating h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.card-rating .rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+/* Estilos para pantallas mayores a 900x900 */
+@media screen and (min-width: 901px) {
+  .card-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px; /* Espaciado entre botones */
+  }
+
+  .button {
+    width: calc(50% - 7.5px); /* Ajuste para el gap entre botones */
+  }
+}

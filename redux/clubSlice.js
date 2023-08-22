@@ -8,6 +8,7 @@ export const clubSlice = createSlice({
   reducers: {
     setCurrentClubId: (state, action) => {
       state.idclub = action.payload.idclub;
+
    },
   },
 });

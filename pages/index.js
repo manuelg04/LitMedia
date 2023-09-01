@@ -46,15 +46,15 @@ export default function Home() {
       <NavBar />
 
       <main className="p-8 flex-grow flex flex-col items-center">
-      <Card className="mb-10 w-1/2 shadow-xl" bordered={true}>
+      <Card className="mb-10 md:w-1/2 shadow-xl" bordered={true}>
           <h2 className="text-xl font-bold mb-4 text-center">A cerca de LITMEDIA</h2>
           <p className="text-lg text-justify">
             En LITMEDIA, nos apasiona la literatura y queremos compartir esa pasión con la comunidad universitaria de la Universidad San Buenaventura de Cali. Explora nuestra plataforma multimedia, accede a diversos materiales de lectura, participa en actividades literarias interactivas y expande tu mundo a través de la lectura.
           </p>
         </Card>
        
-        <div className="w-1/2 grid grid-cols-2 gap-8">
-        <Card className="shadow-md mb-5"  bordered={true}>
+        <div className="w-full md:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <Card className="w-full shadow-xl mb-10" bordered={true}>
             <h3 className="text-xl font-bold mb-4 text-center">¿Qué ofrecemos?</h3>
             <p className="text-lg text-justify">
               Amplia variedad de libros y obras literarias. Guías de discusión para fomentar la creatividad y el pensamiento crítico. Actividades literarias interactivas. Tecnología multimedia para enriquecer la experiencia de lectura.
@@ -67,7 +67,7 @@ export default function Home() {
             </p>
           </Card>
         </div>
-        <Card className="w-1/2 shadow-xl mb-10" bordered={true}>
+        <Card className="w-full md:w-1/2 shadow-xl mb-10" bordered={true}>
   <h3 className="text-xl font-bold mb-4 text-center">Nuestros libros más populares</h3>
   <div className="grid grid-cols-3 gap-4">
     {books.map((book, index) => (
@@ -80,7 +80,7 @@ export default function Home() {
   </div>
 </Card>
 
-<Card className="w-1/2 shadow-xl mb-10" bordered={true}>
+<Card className="w-full md:w-1/2 shadow-xl mb-10" bordered={true}>
   <h3 className="text-xl font-bold mb-4 text-center">Testimonios de Nuestros Miembros</h3>
   <div className="grid grid-cols-1 gap-4">
     {[{

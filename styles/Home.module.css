@@ -47,13 +47,6 @@
   text-align: center;
 }
 
-.card {
-  width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
 .imageBook{
   /* width: 100%;
   height: 100%;
@@ -69,6 +62,30 @@
   background-color: white; /* Fondo blanco */
   max-width: 1000px;       /* Ancho máximo */
   margin: 0 auto;         /* Centrar el contenedor */
+}
+
+
+/* Estilos por defecto para escritorio */
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espaciado entre los elementos */
+}
+
+.card {
+  flex: 1; /* Hace que los cards ocupen todo el espacio disponible */
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media screen and (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column; /* Apila los elementos verticalmente */
+  }
+
+  .card {
+    flex: none; /* Reset para que no intente ocupar todo el espacio */
+    width: 100%; /* Ocupa todo el ancho del contenedor en móviles */
+  }
 }
 
 

@@ -2,7 +2,7 @@
   padding: 20px;
   background: #f9f9f9;
   border-radius: 10px;
-  margin: 40px auto; /* Aumentar el margen superior e inferior */
+  margin: 40px 0; /* Aumentar el margen superior e inferior */
   max-width: 1000px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -42,5 +42,15 @@
 
   .button {
     width: calc(50% - 7.5px); /* Ajuste para el gap entre botones */
+  }
+}
+@media screen and (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column; /* Apila los elementos verticalmente */
+  }
+
+  .card {
+    flex: none; /* Reset para que no intente ocupar todo el espacio */
+    width: 100%; /* Ocupa todo el ancho del contenedor en móviles */
   }
 }

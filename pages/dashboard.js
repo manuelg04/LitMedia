@@ -106,7 +106,7 @@ export default function Dashboard() {
 };
   
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gray-200">
       <Head>
         <title>Dashboard - LITMEDIA</title>
         <meta name="description" content="Dashboard del proyecto LITMEDIA" />
@@ -125,12 +125,12 @@ export default function Dashboard() {
       </header>
 
       <main className="flex-grow p-6">
-      <div className="w-full mx-auto">
-      <div className="flex flex-wrap justify-between">
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">  {/* Aumenta el gap para dar más espacio entre las tarjetas */}
+      <div className="card p-4 bg-white rounded shadow-lg">
 
 {/* Card para "¿Qué deseas hacer hoy?" y los botones */}
 <div className="flex-grow p-2 card w-full md:w-1/2 md:mr-4">
-  <h2 className="text-2xl mb-4 text-center sm:text-xl">¿Qué deseas hacer hoy?</h2>
+<h2 className="text-2xl mb-4 text-center">¿Qué deseas hacer hoy?</h2>
 
   <div className={styles["card-actions"]}>
     {/* Primer botón con ícono de ejemplo */}
@@ -162,8 +162,8 @@ export default function Dashboard() {
 </div>
 
 {/* Card de calificación */}
-<div className={`${styles["card-container"]} ${styles["card-rating"]} flex-grow p-2 card w-full md:w-1/2`}>
-      <h2 className="text-xl mb-2 text-justify sm:text-lg sm:px-2">🌟 LITMEDIA es reconocido ampliamente como el mejor club de lectura en la región del Valle del Cauca, específicamente en Cali, Colombia. Nuestro compromiso con la promoción de la literatura, la creación de espacios para el debate y el fomento del amor por la lectura nos ha posicionado en el corazón de nuestra comunidad. Agradecemos profundamente a cada miembro por ser parte de esta maravillosa experiencia y contribuir a nuestra misión. ¡Gracias por pertenecer a LITMEDIA y hacerlo posible!</h2>
+<div className="card p-4 bg-white rounded shadow-lg">
+<h2 className="text-xl mb-4 text-justify">🌟 LITMEDIA es reconocido ampliamente como el mejor club de lectura en la región del Valle del Cauca, específicamente en Cali, Colombia. Nuestro compromiso con la promoción de la literatura, la creación de espacios para el debate y el fomento del amor por la lectura nos ha posicionado en el corazón de nuestra comunidad. Agradecemos profundamente a cada miembro por ser parte de esta maravillosa experiencia y contribuir a nuestra misión. ¡Gracias por pertenecer a LITMEDIA y hacerlo posible!</h2>
       <p className="mb-2">Gracias por pertenecer a LITMEDIA</p>
       <span className="text-4xl">😃</span> {/* Emoji de felicidad */}
       <div className="mt-2 flex items-center">
@@ -173,18 +173,17 @@ export default function Dashboard() {
     </div>
     </div>
 
-{/* Card para "Objetivos específicos del proyecto:" */}
-<div className="card bg-white p-6 rounded shadow-lg w-full mt-4">
-          
-        <div className="bg-white p-6 rounded shadow-lg w-full md:w-1/2">
+    <div className="bg-white p-4 rounded shadow-lg">         
+<div className="card p-4 bg-white rounded shadow-lg col-span-2">
       <h2 className="text-2xl mb-4 text-center">Objetivos específicos del proyecto:</h2>
       <Historietas />
+     
     </div>
 
  {/* Card para el gráfico */}
- <div className="card bg-white p-6 rounded shadow-lg w-full mt-4">
-      <h2 className="text-2xl mb-4 text-center">Resumen de lectura</h2>
-      <SimpleBarChart />
+ <div className=" p-4 bg-white rounded shadow-lg"> 
+ <h2 className="text-2xl mb-4 text-center">Resumen de lectura</h2>
+ <SimpleBarChart/>
     </div>
     </div>
     </div>

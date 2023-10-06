@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/react-in-jsx-scope */
-function CustomTooltip({ active, payload }) {
+export default function CustomTooltip({ active, payload }) {
     if (active && payload && payload.length) {
       return (
         <div style={{ backgroundColor: '#fff', padding: '10px', border: '1px solid #ccc' }}>

@@ -26,6 +26,7 @@ dayjs.extend(localizedFormat);
 
   const [comentario, setComentario] = useState("");
   const [comments, setComments] = useState([]);
+  const [userHasRated, setUserHasRated] = useState(false); // Nuevo estado para verificar si el usuario ya ha calificado
   
   const [rating, setRating] = useState(0);
 
@@ -45,12 +46,30 @@ dayjs.extend(localizedFormat);
 
  const fotoLibroUrl = useSelector(selectFotoLibroUrl);
 
+ useEffect(() => {
+  const checkIfUserHasRated = async () => {
+    try {
+      const response = await axios.get(`/api/checkRating?clubId=${clubId}&userId=${userId}`);
+      if (response.data.hasRated) {
+        setUserHasRated(true);
+        setRating(response.data.rating); // Establece la calificación anterior
+      }
+    } catch (error) {
+      console.error("Error checking if user has rated:", error);
+    }
+  }
+
+  fetchComments();
+  checkIfUserHasRated(); // Verifica si el usuario ya ha calificado al cargar el componente
+}, [clubId, userId]);
+
 
 
  const handleRateChange = async (value) => {
   setRating(value);
   try {
-    await axios.post('/api/calificarClub', { club_id: clubId, rating: value });
+    const response = await axios.post('/api/calificarClub', { club_id: clubId, rating: value, userid: userId });
+    console.log("🚀 ~ response:", response)
     Swal.fire({
       icon: 'success',
       title: '¡Gracias por calificar mi club de lectura!',
@@ -143,7 +162,7 @@ dayjs.extend(localizedFormat);
 
 
             <div className="mt-2">
-              <Rate onChange={handleRateChange} value={rating} />
+              <Rate onChange={handleRateChange} value={rating} disabled={userHasRated} />
               <p className="mt-2 font-semibold">Tu calificación: {rating}</p>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import React, { Component }  from 'react';
+import React  from 'react';
 import { useDispatch } from 'react-redux'
 import { EyeIcon, PieChartIcon, PlusCircleIcon } from 'lucide-react'
 import { Modal, Form, Input, Button, message, Upload } from 'antd'

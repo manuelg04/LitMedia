@@ -3,7 +3,6 @@ import { useState } from 'react'
 import axios from 'axios'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
-import { useRouter } from 'next/router'
 import Layout from './layout'
 
 dayjs.extend(relativeTime)
@@ -14,7 +13,6 @@ export default function ForoVideosLectura () {
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState('')
 
-  const router = useRouter()
 
   const handleSubmit = async e => {
     e.preventDefault()

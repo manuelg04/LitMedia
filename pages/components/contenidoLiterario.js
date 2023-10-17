@@ -39,7 +39,7 @@ export default function ContenidoLiterario () {
       <LiteraryDatabase />
       <div className='grid grid-cols-5 justify-center'>
         {contenido.map(item => (
-          <Card>
+          <Card key={item.id}>
             <CardBody>
               <Image
                 src={item.imagen || '/path-to-default-image.jpg'}

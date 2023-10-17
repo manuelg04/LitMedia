@@ -119,18 +119,6 @@ const CreateClubLectura = () => {
     }
   }
 
-  const handleLogout = async () => {
-    try {
-      const response = await axios.post('/api/logout')
-      if (response.status === 200) {
-        // Redirigir al usuario a la página de inicio o donde desees
-        router.push('/')
-      }
-    } catch (error) {
-      console.error('Error cerrando la sesión:', error)
-    }
-  }
-
   return (
     <div>
       <div className='flex gap-6 mb-8'>

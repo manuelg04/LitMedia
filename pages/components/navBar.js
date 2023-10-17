@@ -5,7 +5,8 @@
 // Archivo: NavBar.jsx
 import Swal from 'sweetalert2'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
+import axios from 'axios'
+
 
 export default function NavBar ({page}) {
   const router = useRouter()

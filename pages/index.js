@@ -65,7 +65,7 @@ export default function Home () {
         {/* Primer frame */}
         <div className='flex flex-row h-[70vh] w-full bg-purple-100'>
           <div className='w-1/2 px-20 py-56'>
-            <div className='mb-10' bordered={true}>
+            <div className='mb-10'>
               <h2 className='text-xl font-bold mb-4 text-center'>
                 Acerca de LITMEDIA
               </h2>
@@ -80,7 +80,7 @@ export default function Home () {
             </div>
           </div>
           <div className='w-1/2 px-20 py-28'>
-            <div className='w-full mb-10' bordered={true}>
+            <div className='w-full mb-10' >
               <h3 className='text-xl font-bold mb-4 text-center'>
                 ¿Qué ofrecemos?
               </h3>
@@ -91,7 +91,7 @@ export default function Home () {
                 enriquecer la experiencia de lectura.
               </p>
             </div>
-            <div className='mb-5' bordered={true}>
+            <div className='mb-5' >
               <h3 className='text-xl font-bold mb-4'>
                 ¿Cómo unirse al Club de Lectura LITMEDIA?
               </h3>
@@ -107,7 +107,7 @@ export default function Home () {
         </div>
         {/* Segundo frame */}
         <div className='flex flex-row justify-center w-full h-[90vh]'>
-          <div className='w-full md:w-1/2 mb-10 py-20' bordered={true}>
+          <div className='w-full md:w-1/2 mb-10 py-20' >
             <h3 className='text-xl font-bold mb-4 text-center'>
               Nuestros libros más populares
             </h3>
@@ -128,7 +128,7 @@ export default function Home () {
         </div>
         {/* tercer frame */}
         <div className='flex flex-row justify-center w-full h-[90vh] bg-purple-100'>
-          <div className='w-full mb-10' bordered={true}>
+          <div className='w-full mb-10' >
             <h3 className='text-xl font-bold mb-4 text-center pt-20'>
               Testimonios de Nuestros Miembros
             </h3>

@@ -1,5 +1,4 @@
 /* eslint-disable react/react-in-jsx-scope */
-import Head from 'next/head'
 import Historietas from './components/dashelper'
 import SimpleBarChart from './components/chart'
 import Layout from './components/layout'

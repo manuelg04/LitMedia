@@ -1,9 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/react-in-jsx-scope */
 
-import { Card } from 'antd'
 import Head from 'next/head'
-import NavBar from './components/navBar'
 import { useRouter } from 'next/router'
 
 export default function Home () {

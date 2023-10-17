@@ -31,6 +31,10 @@
   margin-top: 10px;
 }
 
+.content_header-flex{
+  display: flex;
+}
+
 /* Estilos para pantallas mayores a 900x900 */
 @media screen and (min-width: 901px) {
   .card-actions {

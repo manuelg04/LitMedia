@@ -1,7 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
 import Head from 'next/head'
-import Historietas from '../components/dashelper'
-import SimpleBarChart from '../components/chart'
 import NavBar from '../components/navBar'
 import MenuLateral from '../components/menu'
 

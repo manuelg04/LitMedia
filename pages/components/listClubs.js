@@ -3,15 +3,13 @@
 // components/listadodeClubs.js
 
 import { useEffect, useState } from 'react'
-import axios from 'axios'
-import { List, Rate, Typography } from 'antd'
+import { Rate, Typography } from 'antd'
 import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 import { setCurrentClubId } from '../../redux/clubSlice'
 import { useRouter } from 'next/router'
 import { setBook } from '../../redux/bookSlice'
 import { Card, CardBody, CardFooter, Divider } from '@nextui-org/react'
-import Image from 'next/image'
 
 import Layout from './layout'
 

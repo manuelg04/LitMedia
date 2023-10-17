@@ -4,8 +4,6 @@ import axios from 'axios'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { useRouter } from 'next/router'
-import NavBar from '../components/navBar'
-import MenuLateral from '../components/menu'
 import Layout from './layout'
 
 dayjs.extend(relativeTime)

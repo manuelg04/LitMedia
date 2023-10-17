@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-comment-textnodes */
 /* eslint-disable react/react-in-jsx-scope */
-import Head from 'next/head'
 import { Rate } from 'antd'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'

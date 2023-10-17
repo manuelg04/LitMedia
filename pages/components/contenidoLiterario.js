@@ -4,8 +4,6 @@ import Image from 'next/image'
 import axios from 'axios'
 import LiteraryDatabase from './bdLiteraria'
 import { useRouter } from 'next/router'
-import NavBar from '../components/navBar'
-import MenuLateral from '../components/menu'
 import { Card, CardBody, CardFooter, Divider } from '@nextui-org/react'
 import Layout from './layout'
 

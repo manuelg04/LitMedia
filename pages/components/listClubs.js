@@ -5,35 +5,35 @@
 import { useEffect, useState } from 'react'
 import { Rate, Typography } from 'antd'
 import Link from 'next/link'
-import { useDispatch } from 'react-redux'
-import { setCurrentClubId } from '../../redux/clubSlice'
-import { useRouter } from 'next/router'
-import { setBook } from '../../redux/bookSlice'
+// import { useDispatch } from 'react-redux'
+// import { setCurrentClubId } from '../../redux/clubSlice'
+// import { useRouter } from 'next/router'
+// import { setBook } from '../../redux/bookSlice'
 import { Card, CardBody, CardFooter, Divider } from '@nextui-org/react'
 
 import Layout from './layout'
 
 const ListadodeClubs = () => {
   const [clubs, setClubs] = useState([])
-  const dispatch = useDispatch() // Usa useDispatch para obtener el dispatch de Redux
-  const router = useRouter()
+  // const dispatch = useDispatch() // Usa useDispatch para obtener el dispatch de Redux
+  // const router = useRouter()
 
-  const handleClubClick = club => {
-    dispatch(setCurrentClubId(club))
+  // const handleClubClick = club => {
+  //   dispatch(setCurrentClubId(club))
 
-    // Actualizar los detalles del libro en el estado global
-    dispatch(
-      setBook({
-        nombre: club.nombre,
-        libroAsociado: club.libroasociado,
-        autor: club.autor, // Asegúrate de que el objeto club tiene esta propiedad
-        generoLiterario: club.generoLiterario, // Lo mismo aquí
-        descripcion: club.descripcion,
-        fotoLibroUrl: club.fotolibrourl
-      })
-    )
-    router.push(`/club/${club.idclub}`)
-  }
+  //   // Actualizar los detalles del libro en el estado global
+  //   dispatch(
+  //     setBook({
+  //       nombre: club.nombre,
+  //       libroAsociado: club.libroasociado,
+  //       autor: club.autor, // Asegúrate de que el objeto club tiene esta propiedad
+  //       generoLiterario: club.generoLiterario, // Lo mismo aquí
+  //       descripcion: club.descripcion,
+  //       fotoLibroUrl: club.fotolibrourl
+  //     })
+  //   )
+  //   router.push(`/club/${club.idclub}`)
+  // }
 
   useEffect(() => {
     const getClubs = async () => {
@@ -133,7 +133,7 @@ const ListadodeClubs = () => {
         <div className='grid grid-cols-4 justify-center'>
           {clubs.map(club => (
             <Link href={`/club/${club.idclub}`}>
-              <Card>
+              <Card key={club.idclub}>
                 <CardBody>
                   <img
                     src={club.fotolibrourl}

@@ -3,13 +3,11 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import axios from 'axios'
 import LiteraryDatabase from './bdLiteraria'
-import { useRouter } from 'next/router'
 import { Card, CardBody, CardFooter, Divider } from '@nextui-org/react'
 import Layout from './layout'
 
 export default function ContenidoLiterario () {
   const [contenido, setContenido] = useState([])
-  const router = useRouter()
 
   useEffect(() => {
     const fetchData = async () => {

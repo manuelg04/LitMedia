@@ -33,7 +33,6 @@ const CreateClubLectura = () => {
   const clubId = useSelector(state => state.club.idclub)
 
   const userId = useSelector(selectUserId)
-  const router = useRouter()
 
   const nombreDelLibroAsociado = useSelector(selectNombre)
 

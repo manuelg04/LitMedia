@@ -11,7 +11,6 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc' // UTC plugin
 import timezone from 'dayjs/plugin/timezone' // timezone plugin
 import localizedFormat from 'dayjs/plugin/localizedFormat'
-import { useRouter } from 'next/router'
 import {
   selectAutor,
   selectDescripcion,

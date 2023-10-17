@@ -132,8 +132,8 @@ const ListadodeClubs = () => {
         </h2>
         <div className='grid grid-cols-4 justify-center'>
           {clubs.map(club => (
-            <Link href={`/club/${club.idclub}`}>
-              <Card key={club.idclub}>
+            <Link key={club.idclub} href={`/club/${club.idclub}`}>
+              <Card>
                 <CardBody>
                   <img
                     src={club.fotolibrourl}

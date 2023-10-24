@@ -127,10 +127,16 @@ const ListadodeClubs = () => {
   return (
     <Layout page={'LISTA DE CLUBS'}>
       <div className='bg-white'>
-        <h2 className='text-2xl font-semibold mb-4 text-center text-blue-600'>
+        <h2 className='text-2xl font-semibold mb-4 text-center text-blue-600 
+        lg:text-base 
+        md:text-base 
+        sm:text-base
+        min-[320px]:text-base'>
           Aquí puedes ver el listado de clubs creados por nuestros usuarios
         </h2>
-        <div className='grid grid-cols-4 justify-center'>
+        <div className='grid grid-cols-4 justify-center gap-x-2 gap-y-2 
+        sm:grid grid-cols-3
+        min-[320px]:grid-cols-1'>
           {clubs.map(club => (
             <Link key={club.idclub} href={`/club/${club.idclub}`}>
               <Card>
@@ -138,21 +144,21 @@ const ListadodeClubs = () => {
                   <img
                     src={club.fotolibrourl}
                     alt={`Imagen de ${club.libroasociado}`}
-                    className='w-[300px] h-[300px] mb-4 object-cover rounded text-center'
+                    className='w-[300px] h-[300px] mb-4 object-cover rounded text-center xl:w-[150px] h-[150px] lg:w-[100px] h-[100px] sm:w-[80px] h-[80px] min-[320px]:w-[310px] h-[310px]'
                   />
                 </CardBody>
                 <Divider />
                 <CardFooter>
-                  <div className='flex flex-col h-[195px]'>
+                  <div className='flex flex-col h-[195px] 2xl:flex flex-col h-[195px] xl:flex flex-col h-[160px] sm:h-[210px]'>
                     <p>
                       <Typography.Text mark>[{club.idclub}]</Typography.Text>
                     </p>
-                    <p>Libro asociado:{club.libroasociado}</p>
-                    <p>Nombre del libro: {club.nombre}</p>
-                    <p>Autor: {club.autor}</p>
+                    <p className='xl:text-xs lg:text-xs md:text-xs sm:text-xs'>Libro asociado:{club.libroasociado}</p>
+                    <p className='xl:text-xs lg:text-xs md:text-xs sm:text-xs'>Nombre del libro: {club.nombre}</p>
+                    <p className='xl:text-xs lg:text-xs md:text-xs sm:text-xs'>Autor: {club.autor}</p>
                     {/* Asegúrate de que 'club' tenga esta propiedad 'autor' */}
-                    <Rate value={club.avg_rating} disabled />
-                    <p>{club.descripcion}</p>
+                    <Rate value={club.avg_rating} className='lg:text-xs md:text-xs sm:text-xs' disabled />
+                    <p className='xl:text-sm lg:text-xs md:text-xs sm:text-xs'>{club.descripcion}</p>
                   </div>
                 </CardFooter>
               </Card>

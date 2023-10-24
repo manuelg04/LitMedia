@@ -49,20 +49,35 @@ export default function ForoVideosLectura () {
   return (
     <Layout page={'FORO MULTIMEDIA'}>
       <div className='flex'>
-        <div className='lg:w-1/3 space-y-6'>
-          <h2 className='text-2xl font-bold text-gray-900 mb-4'>
+        <div className='lg:w-1/3 space-y-6 
+        md:w-2/4 
+        sm:w-2/4
+        min-[320px]:w-2/4'>
+          <h2 className='text-2xl font-bold text-gray-900 mb-4 
+          lg:text-base 
+          md:text-base 
+          sm:text-base
+          min-[320px]:text-base'>
             Notas Literarias
           </h2>
           <div className='bg-white p-4 rounded-lg shadow'>
             {/* Here you can insert the literary notes content */}
-            <p className='text-gray-700'>
+            <p className='text-gray-700 
+            lg:text-sm 
+            md:text-sm 
+            sm:text-sm
+            min-[320px]:text-xs'>
               The quote comes from the authors latest book. La cita proviene del
               libro más reciente del autor.
             </p>
           </div>
         </div>
 
-        <div className='lg:w-2/3 ml-6 mt-6 space-y-6'>
+        <div className='lg:w-2/3 ml-6 mt-6 space-y-6 
+        lg:mt-10 
+        md:w-2/4 
+        sm:w-2/4
+        min-[320px]:w-2/4'>
           <form onSubmit={handleSubmit} className='mb-4'>
             <label
               htmlFor='youtubeURL'
@@ -100,7 +115,11 @@ export default function ForoVideosLectura () {
           )}
 
           <div className='comments-section'>
-            <h2 className='text-2xl font-bold text-gray-900 mb-4'>
+            <h2 className='text-2xl font-bold text-gray-900 mb-4 
+            lg:text-base 
+            md:text-sm 
+            sm:text-sm
+            min-[320px]:text-xs'>
               Sección de Discusión LITMEDIA
             </h2>
             <form onSubmit={handleCommentSubmit} className='mb-4'>

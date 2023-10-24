@@ -44,8 +44,13 @@ const LiteraryDatabase = () => {
   }
 
   return (
-    <div className='flex flex-col items-center justify-center p-4'>
-      <h1 className='text-4xl font-bold mb-4'>Base de datos literaria</h1>
+    <div className='flex flex-col items-center justify-center p-4 md:pt-0 sm:pt-0'>
+      <h1 className='text-4xl font-bold mb-4 
+      xl:text-xl 
+      lg:text-base 
+      md:text-base 
+      sm:text-base
+      min-[320px]:text-base'>Base de datos literaria</h1>
       <Dragger
         {...draggerProps}
         beforeUpload={file => {

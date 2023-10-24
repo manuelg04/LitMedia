@@ -38,9 +38,22 @@ export default function NavBar ({page}) {
     }
   }
   return (
-    <div className='pt-6 h-[10vh] shadow-xl px-[180px]'>
+    <div className='
+    flex bg-white
+    2xl:px-40 justify-between sticky top-0 items-center h-[8vh] 
+    xl:px-40 justify-between sticky top-0 items-center h-[8vh] 
+    lg:px-16 justify-between sticky top-0 items-center h-[8vh] 
+    md:px-12 justify-between sticky top-0 items-center h-[8vh] 
+    sm:px-5 justify-between sticky top-0 items-center h-[8vh] 
+    min-[320px]:px-2 justify-between sticky top-0 items-center h-[8vh]'>
       <span
-        className='text-4xl'
+        className='
+        2xl:text-2xl 
+        xl:text-xl 
+        lg:text-lg 
+        md:text-md 
+        sm:text-sm 
+        min-[320px]:text-xs'
         onClick={() => router.push('/dashboard')}
         style={{ cursor: 'pointer' }}
       >
@@ -48,7 +61,13 @@ export default function NavBar ({page}) {
       </span>
       <button
         onClick={handleLogout}
-        className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right'
+        className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right 
+        2xl:text-2xl 
+        xl:text-xl 
+        lg:text-lg 
+        md:text-md 
+        sm:text-sm 
+        min-[320px]:text-xs'
       >
         Cerrar sesión
       </button>

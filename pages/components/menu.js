@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import React  from 'react';
+import React from 'react'
 import { useDispatch } from 'react-redux'
 import { EyeIcon, PieChartIcon, PlusCircleIcon } from 'lucide-react'
 import { Modal, Form, Input, Button, message, Upload } from 'antd'
@@ -68,30 +68,59 @@ export default function MenuLateral () {
     }
   }
   return (
-    <div className='pl-[150px]'>
+    <div className=''>
       {/* Card para "¿Qué deseas hacer hoy?" y los botones */}
-      <div className='px-5'>
+      <div className='px-2
+      2xl:w-full pb-4 
+      xl:w-full pb-4 w-96
+      lg:w-full pb-4 w-96
+      md:w-screen flex flex-col 
+      sm:w-screen flex flex-col
+      min-[320px]:w-screen flex flex-col w-screen
+      '>
         {/* title */}
-        <div className='pt-10'>
-          <h2 className='text-2xl mb-4 text-center '>¿Qué deseas hacer hoy?</h2>
+        <div className='pt-10 md:pt-3 sm:pt-3 min-[320px]:pt-3'>
+          <h2 className='text-2xl mb-4 text-center xl:text-lg lg:text-xs md:text-sm sm:text-sm min-[320px]:text-xs'>
+            ¿Qué deseas hacer hoy?
+          </h2>
         </div>
 
         {/* Buttons */}
-        <div>
+        <div className='
+        flex 
+        2xl:flex-col gap-y-2
+        xl:flex-col gap-y-2 
+        lg:flex-col gap-y-2 
+        md:flex-row gap-x-2 
+        sm:flex-row gap-y-2 
+        min-[320px]:flex-col'>
           {/* Primer botón con ícono de ejemplo */}
-          <div className='pt-5'>
+          <div className='pt-5 md:pt-0 sm:pt-0 min-[320px]:pt-1'>
             <Link href='/components/foromultimedia'>
-              <button className='flex items-center w-full sm:w-64 text-lg bg-gradient-to-r from-purple-600 to-purple-900 hover:from-purple-500 hover:to-purple-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline sm:w-full'>
-                <PlusCircleIcon className='h-6 w-6' /> Crear Espacio de Lectura
-                Multimedia
+              <button className='
+              flex items-center bg-gradient-to-r from-purple-600 to-purple-900 hover:from-purple-500 hover:to-purple-800 text-white font-bold rounded focus:outline-none focus:shadow-outline 
+              2xl:text-2xl
+              xl:text-xl
+              lg:text-lg py-2 px-4 
+              md:text-md gap-x-1 
+              sm:text-sm gap-x-1 
+              min-[320px]:text-xs w-full gap-y-1'>
+                <PlusCircleIcon className='h-6 w-6' />
+                <p className='w-full'>Crear Espacio de Lectura Multimedia</p>
               </button>
             </Link>
           </div>
 
           {/* Segundo botón con ícono de ejemplo */}
-          <div className='pt-5'>
+          <div className='pt-5 md:pt-0 sm:pt-0 min-[320px]:pt-1'>
             <Link href='/components/contenidoLiterario'>
-              <button className='flex items-center w-full text-lg bg-gradient-to-r from-purple-600 to-purple-900 hover:from-purple-500 hover:to-purple-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'>
+              <button className='flex items-center bg-gradient-to-r from-purple-600 to-purple-900 hover:from-purple-500 hover:to-purple-800 text-white font-bold rounded focus:outline-none focus:shadow-outline 
+              2xl:text-2xl
+              xl:text-xl
+              lg:text-lg py-2 px-4 
+              md:text-md w-8 gap-x-1 
+              sm:text-sm w-8 gap-x-1 
+              min-[320px]:text-xs w-full gap-y-1'>
                 <EyeIcon className='h-6 w-6' />
                 <p className='w-full'>Ver contenido literario disponible</p>
               </button>
@@ -99,25 +128,36 @@ export default function MenuLateral () {
           </div>
 
           {/* Tercer botón con ícono de ejemplo */}
-          <div className='pt-5'>
+          <div className='pt-5 md:pt-0 sm:pt-0 min-[320px]:pt-1'>
             <button
               onClick={handleOpenModal}
-              className='flex items-center w-full text-lg bg-gradient-to-r from-purple-600 to-purple-900 hover:from-purple-500 hover:to-purple-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+              className='flex items-center bg-gradient-to-r from-purple-600 to-purple-900 hover:from-purple-500 hover:to-purple-800 text-white font-bold rounded focus:outline-none focus:shadow-outline 
+              2xl:text-2xl
+              xl:text-xl
+              lg:text-lg py-2 px-4  
+              md:text-md w-8 gap-x-1 
+              sm:text-sm w-8 gap-x-1 
+              min-[320px]:text-xs w-full gap-y-1'
             >
               <PlusCircleIcon className='h-6 w-6' />
               <p className='w-full'>Crear club de lectura</p>
             </button>
           </div>
-        </div>
-
-        {/* Cuarto botón con ícono de ejemplo */}
-        <div className='pt-5'>
-          <Link href='/components/listClubs'>
-            <button className='flex items-center w-full text-lg bg-gradient-to-r from-purple-600 to-purple-900 hover:from-purple-500 hover:to-purple-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'>
-              <PieChartIcon className='h-6 w-6' />
-              <p className='w-full'>Ver listado de Clubs</p>
-            </button>
-          </Link>
+          {/* Cuarto botón con ícono de ejemplo */}
+          <div className='pt-5 md:pt-0 sm:pt-0 min-[320px]:pt-1'>
+            <Link href='/components/listClubs'>
+              <button className='flex items-center bg-gradient-to-r from-purple-600 to-purple-900 hover:from-purple-500 hover:to-purple-800 text-white font-bold rounded focus:outline-none focus:shadow-outline 
+              2xl:text-2xl
+              xl:text-xl
+              lg:text-lg py-2 px-4  
+              md:text-md w-8 gap-x-1 
+              sm:text-sm w-8 gap-x-1 
+              min-[320px]:text-xs w-full gap-y-1'>
+                <PieChartIcon className='h-6 w-6' />
+                <p className='w-full'>Ver listado de Clubs</p>
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
 

@@ -20,17 +20,35 @@ export default function Layout ({ page, children }) {
         <NavBar page={page} />
       </div>
       {/* Contenido Principial */}
-      <main className='flex flex-row bg-purple-100 mt-[10vh]'>
-        <div className='w-4/12'>
+      <main className='flex bg-purple-100 mt-[8vh] 
+      2xl:flex-row h-screen
+      xl:flex-row 
+      lg:flex-row 
+      md:flex-col
+      sm:flex-col 
+      min-[320px]:flex-col'>
+        <div className='
+        2xl:pl-40 w-5/12 w-screen 
+        xl:pl-40 w-5/12 w-screen 
+        lg:pl-10 w-5/12 w-screen 
+        md:pl-0 w-screen 
+        sm:pl-0 w-screen 
+        min-[320px]:pl-0 w-screen'>
           <MenuLateral />
         </div>
-        <div className='w-9/12 px-20 pt-10 pb-20 overflow-y-scroll bg-white h-[82vh]'>
+        <div className='bg-white h-[82vh] 
+        2xl:w-7/12 overflow-y-scroll
+        xl:w-7/12 overflow-y-scroll
+        lg:w-7/12 px-20 pt-10 pb-20 overflow-y-scroll h-screen 
+        md:h-full
+        sm:h-full
+        min-[320px]:h-full w-screen px-6'>
           {/* Contenido */}
           {children}
         </div>
       </main>
-      <footer className='bg-gray-200 text-center text-lightBeige py-6 fixed bottom-0 w-full px-50'>
-        <span>© 2023 LITMEDIA. Todos los derechos reservados.</span>
+      <footer className='bg-gray-200 text-center text-lightBeige py-6 fixed bottom-0 w-full px-50 min-[320px]:py-0 items-center'>
+        <span className='min-[320px]:text-xs'>© 2023 LITMEDIA. Todos los derechos reservados.</span>
       </footer>
     </div>
   )

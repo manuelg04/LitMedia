@@ -254,8 +254,8 @@ export default function Home () {
         lg:h-[93vh] 
         md:h-[93vh] 
         sm:h-[93vh] 
-        min-[320px]: '>
-          <div className='w-full mb-10'>
+        min-[320px]:h-[90vh]'>
+          <div className='w-full'>
             <h3 className='font-bold mb-4 text-center pt-7
             2xl:text-2xl 
             xl:text-xl 
@@ -271,7 +271,7 @@ export default function Home () {
             lg:px-16 py-36 
             md:px-14 py-44 
             sm:px-14 py-44 
-            min-[320px]:px-0 py-16'>
+            min-[320px]:py-20 px-0 justify-self-center'>
               {[
                 {
                   nombre: 'Carolina R.',

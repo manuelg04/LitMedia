@@ -28,9 +28,9 @@ export default function Layout ({ page, children }) {
       sm:flex-col 
       min-[320px]:flex-col'>
         <div className='
-        2xl:pl-40 w-3/12 w-screen 
-        xl:pl-40 w-3/12 w-screen 
-        lg:pl-10 w-3/12 w-screen 
+        2xl:w-3/12 pl-40 w-screen 
+        xl:w-3/12 pl-40 w-screen 
+        lg:w-3/12 pl-10 w-screen 
         md:pl-0 w-screen 
         sm:pl-0 w-screen 
         min-[320px]:pl-0 w-screen'>

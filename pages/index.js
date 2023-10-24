@@ -254,7 +254,7 @@ export default function Home () {
         lg:h-[93vh] 
         md:h-[93vh] 
         sm:h-[93vh] 
-        min-[320px]:h-[90vh]'>
+        min-[320px]:'>
           <div className='w-full'>
             <h3 className='font-bold mb-4 text-center pt-7
             2xl:text-2xl 

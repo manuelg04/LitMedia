@@ -62,7 +62,7 @@ export default function Home () {
         lg:px-16 
         md:px-10 
         sm:px-8 
-        min-[320px]: '
+        min-[320px]: px-8'
         >
           <span
             className='font-bold 
@@ -105,12 +105,12 @@ export default function Home () {
         {/* Primer frame */}
         <div
           className='bg-purple-100 
-        2xl:h-[80vh] flex w-full items-center  flex-row 
-        xl:h-[80vh] flex w-full items-center  flex-row 
-        lg:h-[85vh] flex w-full items-center  flex-row 
-        md:h-[87vh] py-40
-        sm:h-[87vh] py-40
-        min-[320px]:h-[87vh] py-32 '
+        2xl:h-[80vh] flex-row  flex w-full items-center 
+        xl:h-[80vh] flex-row flex w-full items-center 
+        lg:flex-row h-[80vh] flex w-full items-center 
+        md:flex-col h-[87vh] py-40 
+        sm:flex-col h-[87vh] py-40 
+        min-[320px]:flex-col h-[87vh] py-32 '
         >
           <div className='flex items-center
           2xl:w-1/2 px-20  
@@ -118,7 +118,7 @@ export default function Home () {
           lg:w-1/2 px-14  
           md:w-screen px-14
           sm:w-screen px-14 
-          min-[320px]: '>
+          min-[320px]:w-screen px-14'>
             <div className='mb-10'>
               <h2
                 className='font-bold mb-4 text-center
@@ -153,7 +153,7 @@ export default function Home () {
           xl:w-1/2 px-14 justify-center 
           lg:w-1/2 px-14 justify-center 
           md:px-14 justify-center
-          sm: 
+          sm:w-screen
           min-[320px]: '>
             <div className='w-full mb-10'>
               <h3 className='font-bold mb-4 text-center

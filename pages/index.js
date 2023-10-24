@@ -110,9 +110,9 @@ export default function Home () {
         lg:flex-row h-[80vh] flex w-full items-center 
         md:flex-col h-[87vh] py-40 
         sm:flex-col h-[87vh] py-40 
-        min-[320px]:flex-col h-[87vh] py-32 '
+        min-[320px]:pb-0 pt-0 justify-center flex-col'
         >
-          <div className='flex items-center
+          <div className='flex justify-center items-center
           2xl:w-1/2 px-20  
           xl:w-1/2 px-14  
           lg:w-1/2 px-14  

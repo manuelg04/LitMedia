@@ -13,6 +13,7 @@ export default function Layout ({ page, children }) {
       <Head>
         <title>{page} - LITMEDIA</title>
         <meta name='description' content='Dashboard del proyecto LITMEDIA' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       {/* Barra De Navegacion */}

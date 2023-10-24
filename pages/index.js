@@ -254,7 +254,7 @@ export default function Home () {
         lg:h-[93vh] 
         md:h-[93vh] 
         sm:h-[93vh] 
-        min-[320px]:h-[90vh] '>
+        min-[320px]: '>
           <div className='w-full mb-10'>
             <h3 className='font-bold mb-4 text-center pt-7
             2xl:text-2xl 
@@ -267,11 +267,11 @@ export default function Home () {
             </h3>
             <div className='grid grid-cols-3 gap-4 
             2xl:px-36 py-40 
-            xl:px-36 py-36
-            lg:px-16 py-36
-            md:px-14 py-44
-            sm:px-14 py-44
-            min-[320px]: px-0 py-16'>
+            xl:px-36 py-36 
+            lg:px-16 py-36 
+            md:px-14 py-44 
+            sm:px-14 py-44 
+            min-[320px]:px-0 py-16'>
               {[
                 {
                   nombre: 'Carolina R.',

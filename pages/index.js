@@ -105,9 +105,9 @@ export default function Home () {
         {/* Primer frame */}
         <div
           className='bg-purple-100 
-        2xl:flex w-full items-center h-[80vh] flex-row 
-        xl:flex w-full items-center h-[80vh] flex-row 
-        lg:flex w-full items-center h-[85vh] flex-row 
+        2xl:h-[80vh] flex w-full items-center  flex-row 
+        xl:h-[80vh] flex w-full items-center  flex-row 
+        lg:h-[85vh] flex w-full items-center  flex-row 
         md:h-[87vh] py-40
         sm:h-[87vh] py-40
         min-[320px]:h-[87vh] py-32 '

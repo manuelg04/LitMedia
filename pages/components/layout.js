@@ -28,18 +28,18 @@ export default function Layout ({ page, children }) {
       sm:flex-col 
       min-[320px]:flex-col'>
         <div className='
-        2xl:pl-40 w-5/12 w-screen 
-        xl:pl-40 w-5/12 w-screen 
-        lg:pl-10 w-5/12 w-screen 
+        2xl:pl-40 w-3/12 w-screen 
+        xl:pl-40 w-3/12 w-screen 
+        lg:pl-10 w-3/12 w-screen 
         md:pl-0 w-screen 
         sm:pl-0 w-screen 
         min-[320px]:pl-0 w-screen'>
           <MenuLateral />
         </div>
         <div className='bg-white h-[82vh] 
-        2xl:w-7/12 overflow-y-scroll
-        xl:w-7/12 overflow-y-scroll
-        lg:w-7/12 px-20 pt-10 pb-20 overflow-y-scroll h-screen 
+        2xl:w-9/12 overflow-y-scroll
+        xl:w-9/12 overflow-y-scroll
+        lg:w-9/12 px-20 pt-10 pb-20 overflow-y-scroll h-screen 
         md:h-full
         sm:h-full
         min-[320px]:h-full w-screen px-6'>

@@ -35,8 +35,12 @@ export default function ContenidoLiterario () {
   return (
     <Layout page={'Contenido literario'}>
       <LiteraryDatabase />
-      <div className='grid grid-cols-5 justify-center gap-x-2 gap-y-2 
-      sm:grid grid-cols-4
+      <div className='grid justify-center gap-x-2 gap-y-2 
+      2xl:grid-cols-4 
+      xl:grid-cols-4 
+      lg:grid-cols-4 
+      md:grid-cols-4 
+      sm:grid-cols-4
       min-[320px]:grid-cols-1'>
         {contenido.map(item => (
           <Card key={item.id}>
@@ -51,10 +55,34 @@ export default function ContenidoLiterario () {
             </CardBody>
             <Divider />
             <CardFooter>
-              <div className='flex flex-col h-[142px] 2xl:flex flex-col h-[180px] lg:flex flex-col h-[130px] md:flex flex-col h-[120px] sm:h-[150px] p-0'>
-                <h2 className='font-bold text-2xl mb-2 xl:text-base lg:text-xs md:text-xs sm:text-xs'>{item.titulo}</h2>
-                <p className='text-gray-700 text-base xl:text-sm lg:text-xs md:text-xs sm:text-xs'>Tipo: {item.tipo}</p>
-                <p className='text-gray-700 text-base xl:text-sm lg:text-xs md:text-xs sm:text-xs'>Autor: {item.autor}</p>
+              <div className='flex 
+              2xl:h-[200px] flex-col  
+              xl:h-[180px] flex-col 
+              lg:h-[170px] flex-col  
+              md:h-[100px] flex-col  
+              sm:h-[110px] p-0
+              min-[320px]: h-[70px]'>
+                <h2 className='font-bold text-2xl mb-2 
+                2xl:text-2xl
+                xl:text-xl 
+                lg:text-lg 
+                md:text-md 
+                sm:text-sm
+                min-[320px]:text-xs'>{item.titulo}</h2>
+                <p className='text-gray-700 text-base 
+                2xl:text-2xl
+                xl:text-xl 
+                lg:text-lg 
+                md:text-md 
+                sm:text-sm
+                min-[320px]:text-xs'>Tipo: {item.tipo}</p>
+                <p className='text-gray-700 text-base 
+                2xl:text-2xl
+                xl:text-xl 
+                lg:text-lg 
+                md:text-md 
+                sm:text-sm
+                min-[320px]:text-xs'>Autor: {item.autor}</p>
               </div>
             </CardFooter>
           </Card>

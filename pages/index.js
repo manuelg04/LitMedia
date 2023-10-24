@@ -46,30 +46,99 @@ export default function Home () {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <header className='text-black p-10 shadow-xl bg-purple-200'>
-        <div className='flex space-x-96 items-center'>
-          <span className='text-6xl font-bold'>LITMEDIA</span>
-          <span className='text-3xl mt-5 text-center'>
+      <header
+        className='flex items-center text-black shadow-xl bg-purple-200 
+      2xl:h-[10vh]
+      xl:h-[10vh] 
+      lg:h-[8vh] 
+      md:h-[6vh] 
+      sm:h-[6vh] 
+      min-[320px]:h-[6vh]'
+      >
+        <div
+          className='flex justify-between items-center align-middle w-screen
+        2xl:px-20
+        xl:px-20 
+        lg:px-16 
+        md:px-10 
+        sm:px-8 
+        min-[320px]: '
+        >
+          <span
+            className='font-bold 
+          2xl:text-2xl 
+          xl:text-xl 
+          lg:text-lg 
+          md:text-md 
+          sm:text-sm 
+          min-[320px]:text-xs '
+          >
+            LITMEDIA
+          </span>
+          <span
+            className='text-center items-center
+          2xl:text-2xl
+          xl:text-xl 
+          lg:text-lg 
+          md:text-md 
+          sm:text-sm 
+          min-[320px]:mt-1 text-xs '
+          >
             ¡Bienvenidos al Club de Lectura LITMEDIA!
           </span>
           <button
             onClick={handleLoginClick}
-            className='bg-white text-blue-400 hover:bg-blue-200 py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+            className='bg-white text-blue-400 hover:bg-blue-200 rounded focus:outline-none focus:shadow-outline
+            2xl:text-2xl py-2 px-4 
+            xl:text-xl py-2 px-4 
+            lg:text-lg py-2 px-4 
+            md:text-md py-2 px-4 
+            sm:text-sm py-2 px-4 
+            min-[320px]:py-1 px-1 mt-1 text-xs  '
           >
             Iniciar Sesión
           </button>
         </div>
       </header>
 
-      <main className='flex-grow flex flex-col items-center'>
+      <main className='flex-grow flex flex-col '>
         {/* Primer frame */}
-        <div className='flex flex-row h-[70vh] w-full bg-purple-100'>
-          <div className='w-1/2 px-20 py-56'>
+        <div
+          className='bg-purple-100 
+        2xl:flex w-full items-center h-[80vh] flex-row 
+        xl:flex w-full items-center h-[80vh] flex-row 
+        lg:flex w-full items-center h-[85vh] flex-row 
+        md:h-[87vh] py-40
+        sm:h-[87vh] py-40
+        min-[320px]:h-[87vh] py-32 '
+        >
+          <div className='flex items-center
+          2xl:w-1/2 px-20  
+          xl:w-1/2 px-14  
+          lg:w-1/2 px-14  
+          md:w-screen px-14
+          sm:w-screen px-14 
+          min-[320px]: '>
             <div className='mb-10'>
-              <h2 className='text-xl font-bold mb-4 text-center'>
+              <h2
+                className='font-bold mb-4 text-center
+              2xl:text-2xl 
+              xl:text-xl 
+              lg:text-lg 
+              md:text-md 
+              sm:text-sm 
+              min-[320px]:text-xs '>
                 Acerca de LITMEDIA
               </h2>
-              <p className='text-lg text-justify'>
+              <p
+                className='text-justify
+              2xl:text-lg 
+              xl:text-lg 
+              lg:text-sm 
+              md:text-sm 
+              sm:text-sm 
+              min-[320px]: text-xs'
+              >
                 En LITMEDIA, nos apasiona la literatura y queremos compartir esa
                 pasión con la comunidad universitaria de la Universidad San
                 Buenaventura de Cali. Explora nuestra plataforma multimedia,
@@ -79,23 +148,54 @@ export default function Home () {
               </p>
             </div>
           </div>
-          <div className='w-1/2 px-20 py-28'>
-            <div className='w-full mb-10' >
-              <h3 className='text-xl font-bold mb-4 text-center'>
+          <div className='flex flex-col 
+          2xl:w-1/2 px-20 justify-center 
+          xl:w-1/2 px-14 justify-center 
+          lg:w-1/2 px-14 justify-center 
+          md:px-14 justify-center
+          sm: 
+          min-[320px]: '>
+            <div className='w-full mb-10'>
+              <h3 className='font-bold mb-4 text-center
+              2xl:text-2xl 
+              xl:text-xl 
+              lg:text-lg 
+              md:text-md 
+              sm:text-sm 
+              min-[320px]: text-xs '>
                 ¿Qué ofrecemos?
               </h3>
-              <p className='text-lg text-justify'>
+              <p
+                className='text-justify
+              2xl:text-lg 
+              xl:text-lg 
+              lg:text-sm 
+              md:text-sm 
+              sm:text-sm 
+              min-[320px]:text-xs '>
                 Amplia variedad de libros y obras literarias. Guías de discusión
                 para fomentar la creatividad y el pensamiento crítico.
                 Actividades literarias interactivas. Tecnología multimedia para
                 enriquecer la experiencia de lectura.
               </p>
             </div>
-            <div className='mb-5' >
-              <h3 className='text-xl font-bold mb-4'>
+            <div className='mb-5'>
+              <h3 className='font-bold mb-4 text-center
+              2xl:text-2xl 
+              xl:text-xl 
+              lg:text-lg 
+              md:text-md 
+              sm:text-sm 
+              min-[320px]: text-xs '>
                 ¿Cómo unirse al Club de Lectura LITMEDIA?
               </h3>
-              <p className='text-lg text-justify'>
+              <p className='text-lg text-justify
+              2xl:text-lg 
+              xl:text-lg 
+              lg:text-sm 
+              md:text-sm 
+              sm:text-sm 
+              min-[320px]:text-xs '>
                 ¡Es fácil unirse a nuestra comunidad de lectores! Simplemente
                 sigue estos pasos: Regístrate en nuestra plataforma. Explora
                 nuestra biblioteca y elige tu próxima lectura. Participa en las
@@ -106,9 +206,30 @@ export default function Home () {
           </div>
         </div>
         {/* Segundo frame */}
-        <div className='flex flex-row justify-center w-full h-[90vh]'>
-          <div className='w-full md:w-1/2 mb-10 py-20' >
-            <h3 className='text-xl font-bold mb-4 text-center'>
+        <div
+          className='flex flex-row justify-center w-full 
+        2xl:h-[92vh] 
+        xl:h-[92vh] 
+        lg:h-[92vh] 
+        md:h-[92vh] 
+        sm:h-[92vh] 
+        min-[320px]: '
+        >
+          <div
+            className='w-full md:w-1/2 mb-10 py-20
+          2xl:pt-8 
+          xl:pt-8 
+          lg:pt-5 
+          md:pt-5 
+          sm:pt-5 
+          min-[320px]:pt-5 '>
+            <h3 className='font-bold mb-4 text-center
+            2xl:text-2xl 
+            xl:text-xl 
+            lg:text-lg 
+            md:text-md 
+            sm:text-sm 
+            min-[320px]: text-xs'>
               Nuestros libros más populares
             </h3>
             <div className='grid grid-cols-3 gap-4 pt-36'>
@@ -127,12 +248,30 @@ export default function Home () {
           </div>
         </div>
         {/* tercer frame */}
-        <div className='flex flex-row justify-center w-full h-[90vh] bg-purple-100'>
-          <div className='w-full mb-10' >
-            <h3 className='text-xl font-bold mb-4 text-center pt-20'>
+        <div className='flex flex-row justify-center w-full bg-purple-100
+        2xl:h-[93vh] 
+        xl:h-[93vh] 
+        lg:h-[93vh] 
+        md:h-[93vh] 
+        sm:h-[93vh] 
+        min-[320px]:h-[90vh] '>
+          <div className='w-full mb-10'>
+            <h3 className='font-bold mb-4 text-center pt-7
+            2xl:text-2xl 
+            xl:text-xl 
+            lg:text-lg 
+            md:text-md 
+            sm:text-sm 
+            min-[320px]: text-xs'>
               Testimonios de Nuestros Miembros
             </h3>
-            <div className='grid grid-cols-3 gap-4 px-36 py-48'>
+            <div className='grid grid-cols-3 gap-4 
+            2xl:px-36 py-40 
+            xl:px-36 py-36
+            lg:px-16 py-36
+            md:px-14 py-44
+            sm:px-14 py-44
+            min-[320px]: px-0 py-16'>
               {[
                 {
                   nombre: 'Carolina R.',
@@ -160,7 +299,8 @@ export default function Home () {
                   <img
                     src={testimonio.foto}
                     alt={testimonio.nombre}
-                    className='w-[300px] h-[300px] rounded-full'
+                    className='w-[300px] h-[300px] rounded-full
+                    md:w-[200px] h-[200px]'
                   />
                   <div className='flex flex-col'>
                     <h4 className='font-semibold'>{testimonio.nombre}</h4>
